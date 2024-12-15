@@ -95,6 +95,7 @@ We wouldn't be where we are now without the support from you all!
 - [SticksDev](https://github.com/SticksDeveloper) - Developer
 - [Koud-Wind](https://github.com/Koud-Wind) - Developer
 - [Azurae](https://github.com/azuraerae) - Developer
+- [strubium](https://github.com/strubium) - Developer
 
 ### Official Design Team
 
