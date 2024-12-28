@@ -5,9 +5,13 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "mixins.mwc.refmap.json",
   "client": [
-    "EntityRendererMixin"
+    "EntityRendererMixin",
+    "MixinLayerHeldItem"
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "mixins": [
+    "MixinEntityLivingBase",
+  ]
 }
