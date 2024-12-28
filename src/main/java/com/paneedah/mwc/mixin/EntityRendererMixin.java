@@ -41,7 +41,7 @@ public final class EntityRendererMixin {
         }
     }
 
-    @Redirect(method = "updateCameraAndRender", at = @At(value = "INVOKE_ASSIGN", shift = At.Shift.BEFORE,
+    @Redirect(method = "updateCameraAndRender", at = @At(value = "INVOKE",
             target = "Lnet/minecraft/client/entity/EntityPlayerSP;turn(FF)V"))
     public void injectTurn(EntityPlayerSP player, float yaw, float pitch) {
         Interceptors.turn(player, yaw, pitch);
