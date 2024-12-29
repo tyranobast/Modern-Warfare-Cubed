@@ -118,6 +118,7 @@ like knowing which weapon is better or whether an attachment will be useful to y
 - Removed unused `ItemAmmo`
 - Removed `ammoCounterBackgroundReverse` & `statusBarPosition` configs
 - Removed the S&W .500 Magnum
+- Removed the coremod, replaced it with mixins 
 
 ### Optimization
 

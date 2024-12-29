@@ -12,6 +12,6 @@
     "defaultRequire": 1
   },
   "mixins": [
-    "MixinEntityLivingBase",
+    "MixinEntityLivingBase"
   ]
 }
