@@ -75,14 +75,6 @@ public class ClientModContext extends CommonModContext {
 
         rendererRegistry.preInit();
 
-        List<IResourcePack> defaultResourcePacks = ObfuscationReflectionHelper.getPrivateValue(Minecraft.class, MC, "field_110449_ao");
-        WeaponResourcePack weaponResourcePack = new WeaponResourcePack();
-        defaultResourcePacks.add(weaponResourcePack);
-        IResourceManager resourceManager = MC.getResourceManager();
-        if (resourceManager instanceof IReloadableResourceManager) {
-            ((SimpleReloadableResourceManager) resourceManager).reloadResourcePack(weaponResourcePack);
-        }
-
         MinecraftForge.EVENT_BUS.register(new WeaponEventHandler(this));
 
         KeyBindings.init();

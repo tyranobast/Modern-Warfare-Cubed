@@ -116,7 +116,7 @@ public class ModernSkyRenderer extends IRenderHandler {
             return buf;
 
         } catch (IOException e) {
-            System.err.println("Failed to read out cubemap texture!");
+            System.err.println("Failed to readVector3D out cubemap texture!");
             e.printStackTrace();
         }
 

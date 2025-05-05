@@ -20,7 +20,7 @@ public class CustomSkin {
             MC.getTextureManager().loadTexture(resourceLocation, new DynamicTexture(ImageIO.read(file)));
             MC.getTextureManager().bindTexture(resourceLocation);
         } catch (Exception e) {
-            RED_LOGGER.printFramedError("Load Custom Skin", "Failed to load custom skin: " + name + " from file: " + file.getAbsolutePath(), "Skin will not be loaded.");
+            RED_LOGGER.framedError("Load Custom Skin", "Failed to load custom skin: " + name + " from file: " + file.getAbsolutePath(), "Skin will not be loaded.");
         }
     }
 

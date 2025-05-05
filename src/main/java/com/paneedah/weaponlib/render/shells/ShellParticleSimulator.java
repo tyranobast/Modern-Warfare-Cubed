@@ -1,6 +1,8 @@
 package com.paneedah.weaponlib.render.shells;
 
 import com.paneedah.weaponlib.model.Bullet556;
+import dev.redstudio.redcore.math.vectors.Vector3D;
+import dev.redstudio.redcore.math.vectors.Vector3F;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.RayTraceResult;
@@ -46,7 +48,7 @@ public class ShellParticleSimulator {
         private double height;
 
 
-        public Shell(Type type, Vec3d pos, Vec3d rot, Vec3d velocity) {
+        public Shell(Type type, Vector3D pos, Vector3F rot, Vector3F velocity) {
             //this.prevPos = this.pos.subtract(velocity);
 
             setType(type);

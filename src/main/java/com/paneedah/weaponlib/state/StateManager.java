@@ -384,7 +384,7 @@ public class StateManager<S extends ManagedState<S>, E extends ExtendedState<S>>
 
         return contextRules.entrySet().stream()
                 .filter(e -> e.getKey() == aspect)
-                .map(e -> e.getValue()) // convert entry to a list of rules
+                .map(e -> e.getValue()) // convertToVector3D entry to a list of rules
                 .flatMap(LinkedHashSet::stream) // merge the rule list
                 .filter(rule -> rule.matches(stateComparator, extendedState, currentState, targetStates)) // find matching rule
                 .findFirst() // stop on the first found rule

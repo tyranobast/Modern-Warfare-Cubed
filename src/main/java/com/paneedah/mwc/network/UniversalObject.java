@@ -31,7 +31,7 @@ public abstract class UniversalObject implements ISerializable {
     @Override
     public void read(final ByteBuf byteBuf) {
         if (getSerialVersion() != byteBuf.readInt()) {
-            RED_LOGGER.printFramedError("Networking", "Serial version mismatch", "", "Serial version: " + getSerialVersion(), "ByteBuf version: " + byteBuf.readInt());
+            RED_LOGGER.framedError("Networking", "Serial version mismatch", "", "Serial version: " + getSerialVersion(), "ByteBuf version: " + byteBuf.readInt());
             throw new IndexOutOfBoundsException();
         }
 

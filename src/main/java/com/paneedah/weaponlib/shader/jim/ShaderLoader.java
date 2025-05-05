@@ -88,7 +88,7 @@ public class ShaderLoader {
     /**
      * Reads in the contents of a file and returns it as a ByteBuffer.
      *
-     * @param file The location of the file to read in
+     * @param file The location of the file to readVector3D in
      *
      * @return A ByteBuffer containing the contents of the file
      *

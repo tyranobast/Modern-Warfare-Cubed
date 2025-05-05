@@ -3,8 +3,9 @@ package com.paneedah.mwc.network.handlers;
 import com.paneedah.mwc.network.messages.SpawnParticleMessage;
 import com.paneedah.weaponlib.ModContext;
 import com.paneedah.weaponlib.particle.ExplosionSmokeFX;
+import dev.redstudio.redcore.math.vectors.Vector3D;
 import dev.redstudio.redcore.utils.NetworkUtil;
-import io.redstudioragnarok.redcore.vectors.Vector3F;
+import dev.redstudio.redcore.math.vectors.Vector3F;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
@@ -30,7 +31,7 @@ public final class SpawnParticleMessageHandler implements IMessageHandler<SpawnP
     @SideOnly(Side.CLIENT)
     public IMessage onMessage(final SpawnParticleMessage spawnParticleMessage, final MessageContext messageContext) {
         NetworkUtil.processMessage(messageContext, () -> {
-            final Vector3F position = spawnParticleMessage.getPosition();
+            final Vector3D position = spawnParticleMessage.getPosition();
             final Vector3F velocity = spawnParticleMessage.getVelocity();
 
             for (int i = 0; i < spawnParticleMessage.getCount(); ++i) {

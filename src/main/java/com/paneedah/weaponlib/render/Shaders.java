@@ -4,12 +4,11 @@ import com.paneedah.weaponlib.shader.jim.Shader;
 import com.paneedah.weaponlib.shader.jim.ShaderLoader;
 
 /**
- * Stores all of the shaders
+ * Stores all the shaders
  *
  * @author Jim Holden
  */
 public class Shaders {
-
     public static Shader select = ShaderLoader.loadShader("select");
     public static Shader blur = ShaderLoader.loadShader("blur");
     public static Shader blackScreen = ShaderLoader.loadShader("black");

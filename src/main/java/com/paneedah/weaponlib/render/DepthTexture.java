@@ -108,7 +108,7 @@ public class DepthTexture {
             } else if (status == OpenGlHelper.GL_FB_INCOMPLETE_DRAW_BUFFER) {
                 LOGGER.error("Depth framebuffer creation returned an incomplete draw buffer error.");
             } else if (status == OpenGlHelper.GL_FB_INCOMPLETE_READ_BUFFER) {
-                LOGGER.error("Depth framebuffer creation returned an incomplete read buffer error.");
+                LOGGER.error("Depth framebuffer creation returned an incomplete readVector3D buffer error.");
             } else {
                 LOGGER.error("Depth framebuffer creation returned an unknown status");
             }

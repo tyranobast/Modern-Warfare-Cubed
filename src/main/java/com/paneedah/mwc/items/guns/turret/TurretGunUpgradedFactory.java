@@ -1,6 +1,7 @@
-package com.paneedah.mwc.items.guns;
+package com.paneedah.mwc.items.guns.turret;
 
 import com.paneedah.mwc.MWC;
+import com.paneedah.mwc.items.guns.GunFactory;
 import com.paneedah.mwc.models.Glock18C;
 import com.paneedah.mwc.proxies.CommonProxy;
 import com.paneedah.mwc.weapons.AuxiliaryAttachments;
@@ -15,17 +16,17 @@ import com.paneedah.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import net.minecraft.item.Item;
 import org.lwjgl.opengl.GL11;
 
-public class turretgunFactory implements GunFactory {
+public class TurretGunUpgradedFactory implements GunFactory {
 
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
 
-                .withName("turretgun")
+                .withName("turretgunupgraded")
                 .withFireRate(0.6f)
                 .withRecoil(3f)
                 .withZoom(0.9f)
-                .withConfigGroup(GunConfigurationGroup.RIFLES)
+                .withConfigGroup(GunConfigurationGroup.RIFLE)
                 .hasFlashPedals()
                 .withMaxShots(1, Integer.MAX_VALUE)
                 .withShootSound("turret_shoot")
@@ -300,7 +301,7 @@ public class turretgunFactory implements GunFactory {
                                 }, 250, 0))
 
                         .build())
-                .withSpawnEntityDamage(6f)
+                .withSpawnEntityDamage(30f)
                 .withSpawnEntityGravityVelocity(0.0118f)
 
 
