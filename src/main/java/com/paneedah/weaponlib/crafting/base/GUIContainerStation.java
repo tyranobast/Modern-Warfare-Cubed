@@ -32,6 +32,8 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 
 import java.io.IOException;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -328,7 +330,7 @@ public abstract class GUIContainerStation<T extends TileEntityStation> extends G
 
                     final int seconds = (tileEntity.dismantleDuration[i] - tileEntity.dismantleStatus[i]) / 20;
                     strings.add(TextFormatting.BLUE + "Dismantling: " + TextFormatting.WHITE + I18n.format(tileEntity.mainInventory.getStackInSlot(i + 9).getItem().getTranslationKey() + ".name"));
-                    strings.add(TextFormatting.BLUE + "Time remaining: " + TextFormatting.WHITE + GUIRenderHelper.formatTimeString(seconds, TimeUnit.SECONDS));
+                    strings.add(TextFormatting.BLUE + "Time remaining: " + TextFormatting.WHITE + GUIRenderHelper.formatTimeString(seconds, ChronoUnit.SECONDS));
                     strings.add(TextFormatting.BLUE + "Products:");
 
                     for (CraftingEntry s : ((ICraftingRecipe) item).getCraftingRecipe())

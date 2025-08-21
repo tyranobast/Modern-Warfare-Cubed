@@ -7,25 +7,25 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import scala.concurrent.duration.Duration;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
+import java.time.temporal.TemporalUnit;
 
 import static com.paneedah.mwc.proxies.ClientProxy.MC;
 
 public class GUIRenderHelper {
     private static final double FONT_SIZE_HALVED = MC.fontRenderer.FONT_HEIGHT / 2.0;
 
-    public static String formatTimeString(long time, TimeUnit unit) {
-        final Duration duration = Duration.create(time, unit);
+    public static String formatTimeString(long time, TemporalUnit unit) {
+        final Duration duration = Duration.of(time, unit);
         if (duration.toDays() != 0) {
             return (duration.toDays()) + "d " + (duration.toHours() - duration.toDays() * 24) + "h ";
         } else if (duration.toHours() != 0) {
-            return (duration.toHours()) + "h " + (duration.toMinutes() - duration.toHours() * 60) + "m " + (duration.toSeconds() - duration.toMinutes() * 60) + "s";
+            return (duration.toHours()) + "h " + (duration.toMinutes() - duration.toHours() * 60) + "m " + (duration.getSeconds() - duration.toMinutes() * 60) + "s";
         } else if (duration.toMinutes() != 0) {
-            return (duration.toMinutes()) + "m " + (duration.toSeconds() - duration.toMinutes() * 60) + "s";
-        } else if (duration.toSeconds() != 0) {
-            return duration.toSeconds() + "s";
+            return (duration.toMinutes()) + "m " + (duration.getSeconds() - duration.toMinutes() * 60) + "s";
+        } else if (duration.getSeconds() != 0) {
+            return duration.getSeconds() + "s";
         }
         return "";
     }
