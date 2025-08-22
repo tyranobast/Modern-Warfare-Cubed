@@ -1,7 +1,7 @@
 package com.paneedah.mwc.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
-import com.paneedah.mwc.asm.ServerInterceptors;
+import com.paneedah.weaponlib.WeaponSpawnEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.DamageSource;
@@ -18,6 +18,8 @@ public abstract class MixinEntityLivingBase {
     @Redirect(method = "attackEntityFrom", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/EntityLivingBase;knockBack(Lnet/minecraft/entity/Entity;FDD)V"))
     private void redirectKnockback(EntityLivingBase instance, Entity entity, float strength, double xRatio,
                                    double yRatio, @Local(ordinal = 0, argsOnly = true) DamageSource source) {
-        this.knockBack(entity, ServerInterceptors.getKnockback(source), xRatio, yRatio);
+        if (!(source instanceof WeaponSpawnEntity.ProjectileDamageSource)) {
+            this.knockBack(entity, strength, xRatio, yRatio);
+        }
     }
 }
